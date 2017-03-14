@@ -1,13 +1,27 @@
+import 'rxjs/add/operator/map';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {PhotoModule} from './photo/photo.module';
-import 'rxjs/add/operator/map';
+import {PanelModule} from './panel/panel.module';
+import {RegisterComponent} from './register/register.component';
+import {ListingComponent} from './listing/listing.component';
+import {routing} from './app.routes';
 
 @NgModule({
-  imports: [BrowserModule, PhotoModule, HttpModule],
-  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    PhotoModule,
+    HttpModule,
+    PanelModule,
+    routing,
+  ],
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    ListingComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
