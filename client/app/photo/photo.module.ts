@@ -1,10 +1,9 @@
 import {NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {PhotoComponent} from './photo.component'
+import {TitleFilter} from './photo.pipes';
 
 @NgModule({
-  imports: [ CommonModule ],
-  declarations: [PhotoComponent],
-  exports: [PhotoComponent]
+  declarations: [PhotoComponent, TitleFilter],
+  exports: [PhotoComponent, TitleFilter]
 })
 export class PhotoModule {}
