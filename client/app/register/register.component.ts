@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Http, Headers} from '@angular/http';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {PhotoComponent} from '../photo/photo.component';
 
 @Component({
@@ -10,9 +11,18 @@ import {PhotoComponent} from '../photo/photo.component';
 export class RegisterComponent {
   photo: PhotoComponent = new PhotoComponent();
   http: Http;
-  constructor(http: Http) {
+
+  photoForm: FormGroup;
+
+  constructor(http: Http, fb: FormBuilder) {
     this.http = http;
+    this.photoForm = fb.group({
+      titulo: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      url: ['', Validators.required],
+      description: ['', ],
+    });
   }
+
   register(event) {
     event.preventDefault();
     console.log(this.photo);
