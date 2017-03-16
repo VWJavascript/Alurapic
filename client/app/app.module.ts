@@ -1,33 +1,30 @@
 import 'rxjs/add/operator/map';
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {HttpModule} from '@angular/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AppComponent} from './app.component';
-import {PhotoModule} from './photo/photo.module';
-import {PanelModule} from './panel/panel.module';
-import {RegisterComponent} from './register/register.component';
-import {ListingComponent} from './listing/listing.component';
-import {routing} from './app.routes';
+import { NgModule }  from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { ListagemComponent } from './listagem/listagem.component';
+import { FotoModule } from './foto/foto.module';
+import { PainelModule } from './painel/painel.module';
+import { BotaoModule } from './botao/botao.module';
+import { ModalModule } from './modal/modal.module';
+import { routing }  from './app.routes';
 
 @NgModule({
   imports: [
     BrowserModule,
-    PhotoModule,
+    FotoModule,
     HttpModule,
-    PanelModule,
+    PainelModule,
     FormsModule,
     ReactiveFormsModule,
-    routing,
+    BotaoModule,
+    ModalModule,
+    routing
   ],
-  declarations: [
-    AppComponent,
-    RegisterComponent,
-    ListingComponent
-  ],
-  bootstrap: [AppComponent]
+  declarations: [ AppComponent, CadastroComponent, ListagemComponent ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule {}
-
-
-
+export class AppModule { }
